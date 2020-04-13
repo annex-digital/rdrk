@@ -1,0 +1,82 @@
+{
+    "name": "annex/rapid",
+    "description": "Quick start Drupal template for Australian Government websites",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/drupal",
+    "support": {
+        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+        "chat": "https://www.drupal.org/node/314178"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.2",
+        "drupal/coi": "^1.0",
+        "drupal/components": "^1.1",
+        "drupal/config_filter": "^1.5",
+        "drupal/config_ignore": "^2.2",
+        "drupal/config_override_core_fields": "^1.0@RC",
+        "drupal/config_override_warn": "^1.2",
+        "drupal/config_overview": "1.x-dev",
+        "drupal/console": "^1.9",
+        "drupal/content_access": "^1.0@alpha",
+        "drupal/core-composer-scaffold": "^8.8",
+        "drupal/core-project-message": "^8.8",
+        "drupal/core-recommended": "^8.8",
+        "drupal/ds": "^3.5",
+        "drupal/entity_print": "^2.1",
+        "drupal/govcms8_uikit_starter": "^1.0@alpha",
+        "drupal/install_profile_generator": "^1.0",
+        "drupal/login_security": "^1.5",
+        "drupal/mailsystem": "^4.2",
+        "drupal/mimemail": "^1.0@alpha",
+        "drupal/paragraphs": "^1.11",
+        "drupal/password_policy": "^3.0@alpha",
+        "drupal/raven": "^2.26",
+        "drupal/recaptcha": "^2.5",
+        "drupal/rules": "^3.0@alpha",
+        "drupal/rules_webform": "^1.4",
+        "drupal/seckit": "^1.2",
+        "drupal/swiftmailer": "^1.0@beta",
+        "drupal/telephone_validation": "^2.2",
+        "drupal/token": "^1.6",
+        "drupal/twig_tweak": "^2.5",
+        "drupal/username_enumeration_prevention": "^1.0",
+        "drupal/webform": "^5.8",
+        "drupal/webform_views": "^5.0@alpha",
+        "drush/drush": "^10.1",
+        "platformsh/config-reader": "^2.3"
+    },
+    "require-dev": {
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
+            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
+        }
+    }
+}

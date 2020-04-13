@@ -1,0 +1,23 @@
+name: 'UI Kit (Rapid)'
+type: theme
+description: 'The is a sub theme for the govcms8 uikit'
+core: 8.x
+# Defines the base theme
+base theme: govcms8_uikit_starter
+# Defines libraries group in which we can add css/js.
+libraries:
+  - rapid_uikit/global-styling
+regions:
+  logo: 'Logo'
+  navigation: 'Navigation'
+  search: 'Search'
+  help: 'Help'
+  admin: 'Admin'
+  content_top: 'Content top'
+  content: 'Content'
+  sidebar: 'Sidebar'
+  postscript_1: 'Postscript 1'
+  postscript_2: 'Postscript 2'
+  postscript_3: 'Postscript 3'
+  postscript_4: 'Postscript 4'
+  legal: 'Legal'

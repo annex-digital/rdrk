@@ -1,0 +1,63 @@
+name: rdrk
+recipe: drupal8
+config:
+
+  php: '7.4'
+
+  # Lando defaults to Apache. Switch to nginx to match Platform.sh.
+  via: nginx
+
+  # Set the webroot to match your .platform.app.yaml.
+  webroot: web
+
+  # Lando defaults to the latest MySQL release, but Platform.sh uses MariaDB.
+  # Specify the version to match what's in services.yaml.
+  database: mariadb:10.1
+
+  # Setup PHPStorm "server" as shown here:
+  # https://docs.lando.dev/guides/lando-phpstorm.html
+  # true || false
+  xdebug: false
+
+  config:
+    # See chosen recipe's official documentation for
+    # php, mysql, apache, nginx, etc. config file options.
+
+    # Add a php.ini file for php overrides.
+    # You may have to `lando restart` to activate changes.
+    conf: lando/php.ini
+
+  # Disable this locally, as the cert is wrong in any case.
+  ssl: false
+
+env_file:
+  # This file should contain the PLATFORMSH_CLI_TOKEN and the PLATFORMSH_PROJECT_ID
+  - lando.env
+
+services:
+  appserver:
+    build:
+      - "mkdir -p /app/.platformsh/bin"
+      - "curl -fsSL -o /app/.platformsh/bin/platform https://github.com/platformsh/platformsh-cli/releases/download/v3.53.1/platform.phar"
+      - "chmod ug+x /app/.platformsh/bin/platform"
+    overrides:
+      environment:
+        # Support debugging Drush with XDEBUG.
+        PHP_IDE_CONFIG: "serverName=appserver"
+
+# Commands. Execute with: lando <command>
+tooling:
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for nginx.
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for nginx.
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm
+    user: root
+  platform:
+    service: appserver
+    description: Run Platform CLI commands
+    cmd: /app/.platformsh/bin/platform

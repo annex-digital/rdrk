@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+body .au-body * {
+  font-family: 'Roboto', sans-serif;
+}
+
+body .au-body .au-header, body .au-body > .au-footer.au-footer--alt {
+  background: #0c2a50;
+}
+body .au-body .au-main-nav {
+  background: #0c2a50;
+  border-bottom: 0;
+  padding-top: 1.6rem;
+  margin-top: 0;
+}
+body .au-body .au-main-nav .au-main-nav__menu {
+  background: transparent;
+}
+body .au-body .au-main-nav .au-main-nav__menu .au-link-list li a {
+  color: white;
+}
+body .au-body .au-main-nav .au-main-nav__menu .au-link-list li a:hover {
+  background-color: #004d8e;
+}
+body .au-body > .au-footer.au-footer--alt {
+  border: 0;
+  margin-top: 60px;
+}
+body .au-body > .au-footer.au-footer--alt .au-link-list a {
+  color: white;
+}
+body .au-body form label {
+  display: block;
+}
+body .au-body .webform-section-wrapper > div:not(:last-child), body .au-body form > div:not(:last-child) {
+  margin-bottom: 1rem;
+}
+body .au-body .webform-section .webform-section-title {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+body .au-body #edit-actions {
+  margin-top: 2rem;
+}
+body .au-body #edit-actions .au-btn {
+  background: #004d8e;
+  border-color: #004d8e;
+}
+body .au-body #edit-actions .au-btn:hover {
+  background: #0c2a50;
+}
+body .au-body .region-content-top > div:first-child {
+  margin-top: 40px;
+}
+body .au-body .main-content form > .webform-progress {
+  margin: 40px 0;
+}
+
+body .au-body .main-content form > .webform-progress .webform-progress-tracker.progress-tracker {
+  margin: 0;
+  max-width: 100%;
+}
+
+body .au-body > .content-top {
+  margin-bottom: 0;
+}
+
+body .au-body .progress-step.is-active .progress-marker {
+  background: #004d8e;
+}
+
+body .au-body ul,
+body .au-body ol {
+  max-width: 42em;
+}
+
+body .au-body .au-text-input {
+  max-width: 640px;
+}
+
+[id*="block-backtohomeaffairs"] {
+  padding: 20px 0;
+}
+
+[id*="block-backtohomeaffairs"] a {
+  color: white;
+  font-size: 16px;
+}
+
+[id*="block-backtohomeaffairs"] a:hover {
+  color: white;
+}
+
+a[href="#main-content"] {
+  position: static;
+  top: 10px;
+  left: 10px;
+  /* max-width: 100px; */
+  background: #004d8e;
+  color: white;
+  display: inline-block;
+  padding: 20px 35px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.visually-hidden.focusable:active, .visually-hidden.focusable:focus {
+  position: absolute !important;
+  z-index: 9999;
+}

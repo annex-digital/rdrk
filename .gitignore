@@ -32,3 +32,4 @@ config/sync/.htaccess
 .platform/local
 platform
 /.gitattributes
+_www
